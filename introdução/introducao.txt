@@ -1,0 +1,10 @@
+1)  Protocolo TCP
+    Protocolo HTTP
+
+2) O tempo de envio da mensagem HTTP GET foi de 12:18:33,451975 
+e o de OK foi de 12:18:33,770331. Então o tempo passado foi de 0,318356 segundos.
+
+3) O endereço IP do site gaia.cs.umass.edu é: 128.119.245.12
+O endereço IP da interface de rede do meu computador é: 192.168.31.172
+
+4) foto

@@ -1,0 +1,98 @@
+1) nslookup
+
+    1a) "> nslookup www.nintendo.co.jp"
+    Endereço IP: 104.78.52.223
+
+    2b) "> nslookup -type=NS cam.ac.uk"
+
+    3c) "> nslookup portal.office.com sns-pb.isc.org"
+    Endereço IP: 13.107.6.156
+
+2) Rastreando DNS com o Wireshark
+
+    4) Mensagens de solicitação enviadas com UDP
+    
+    5) Porta origem: 50102
+         Porta destino: 53
+    
+    6) O endereço IP com o qual a mensagem de consulta DNS é enviada, é: 
+    192.168.31.172. Sim, são os mesmos endereços.
+
+    7) O campo Type da mensagem, diz que o DNS é do tipo A, e a mensagem não consta
+    nenhum campo "answer".
+
+    8) Há 3 campos "answer" na resposta DNS:
+    foto
+
+    9) Não, o IP de destino não corresponde ao endereço de IP fornecido na mensagem 
+    de resposta DNS anterior.
+
+    10) Sim, a página web contém imagens, mas nenhuma consulta DNS é realizada para 
+    recuperar as imagens do site.
+
+3) Rastreamento Wireshark com nslookup
+
+Utilizando o comando:
+"nslookup www.mit.edu"
+
+    11) Porta destino: 53
+       Porta Origem: 49780
+
+    12) A Mensagem de consulta DNS está endereçada ao IP: 192.168.31.1, que é o mesmo 
+    IP do servidor DNS local.
+
+    13) O campo Type da mensagem, diz que o DNS é do tipo A, e a mensagem de consulta 
+    não possui campo "answer".
+
+    14) Há 3 campos de "answer", com as seguintes informações:
+        - Name
+        - Type
+        - Class
+        - Time to live
+        - Data length
+
+    Podemos observar que nas duas primeiras, há o campo CNAME e na última há o campo
+    Address.
+
+    15) foto
+
+4) Rastreamento Wireshark com nslookup e type=NS
+
+Utilizando o comando:
+"nslookup -type=NS mit.edu"
+
+    16) A Mensagem de consulta DNS está endereçada ao IP: 192.168.31.1, que é o mesmo 
+    IP do servidor DNS local.
+
+    17) O campor Type da mensagem, diz que o DNS é do tipo NS, e a não possui nenhum
+    campo de "answer".
+
+    18) Os servidores DNS da PUC Minas que foram fornecidos na resposta são:
+        - ns.pucminas.br
+        - server02.pucminas.br
+        - ns.embratel.net.br
+    
+    A mensagem de resposta não forneceu nenhum dos endereços IP's dos servidores DNS da PUC Minas.
+
+    19) foto
+
+5) Rastreamento Wireshark com nslookup e DNS ns.pucminas.br
+
+Utilizando o comando:
+"nslookup www.aiit.or.kr ns.pucminas.br"
+
+    20) A Mensagem de consulta DNS está endereçada ao IP: 192.168.31.1, que é o mesmo 
+    IP do servidor DNS local.
+
+    21) O campor Type da mensagem, diz que o DNS é do tipo A, e a não possui nenhum
+    campo de "answer".
+
+    22) Possui apenas 1 campo "answer" com as seguintes informações:
+        - Name
+        - Type
+        - Class
+        - Time to live
+        - Data length
+        - Address
+
+    23) foto

@@ -1,0 +1,58 @@
+1) A Interação Básica GET/Resposta do HTTP
+
+    1) O meu navegador e o servidor executam a versão 1.1 do HTTP
+
+    2) As linguagens que o meu navegador pode aceitar do servidor são:
+        - português (pt-br)
+        - inglês americano (en-US)
+        - inglês britânico (en)
+
+    3) O meu IP é: 192.168.31.172 e o do servidor é: 128.119.245.12
+
+    4) O código do status retornado do servidor é o 200 OK.
+
+    5) A última vez que o arquivo foi modificado no servidor foi no dia 07 de Setembro de 2019 
+    às 05:59:01.
+
+    6) Foram retornados 128 bytes de conteúdo.
+
+    7) Nenhum cabeçalho foi encontrado dentro da janela de conteúdo do pacote.
+
+2) A Interação HTTP GET Condicional/Resposta
+
+    8) Não existe a linha IF-MODIFIED-SINCE na janela de conteúdo do pacote da primeira 
+    mensagem GET HTTP.
+
+    9) Sim, o servidor retornou explicitamente o conteúdo do arquivo.
+
+    10) Sim, na segunda mensagem HTTP, possui a linha IF-MODIFIED-SINCE, e o seu conteúdo é a data
+    que estava no Last-Modified da última mensagem HTTP GET.
+
+    11) O código de status na resposta é o 304, e sua mensagem é de Not Modified, e o servidor 
+    não retornou explicitamente o conteúdo do arquivo, pois ja constava no cache do navegador 
+    sem modificações.
+
+3) Baixando Documentos Longos
+
+    12) Apenas 1 mensagem HTTP GET foi enviada pelo meu navegador
+
+    13) Foram necessários 4 segmentos TCP para carregar a resposta.
+
+    14) O Código de status associada com a resposta à mensagem HTTP GET é o 200 e sua mensagem é OK.
+
+    15) Apenas na mensagem de resposta HTTP com o status 200 OK.
+
+4) Documentos HTML com Objetos Incluídos
+
+    16) Foram enviadas 3 mensagens HTTP GET pelo meu navegador, para os seguintes endereços:
+        - /wireshark-labs/HTTP-wireshark-file4.html 
+        - /pearson.png
+        - /~kurose/cover_5th_ed.jpg
+
+    17) Foram baixadas em sequência, pois o navegador esperou a resposta 200 OK.
+
+5) Autenticação HTTP
+
+    18) O código de status da mensagem HTTP GET é a 401 e sua mensagem associada é Unauthorized.
+
+    19) O novo campo adicionado na mensagem é o Authorization.
